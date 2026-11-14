@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="32dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/recordState"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="대기 중"
+                android:textSize="28sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/startButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minWidth="200dp"
+                android:minHeight="88dp"
+                android:text="기록 시작"
+                android:textSize="24sp" />
+
+            <Button
+                android:id="@+id/stopButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:minWidth="200dp"
+                android:minHeight="88dp"
+                android:text="기록 정지"
+                android:textSize="24sp" />
+        </LinearLayout>
+
+        <!-- Emulator demos: replay a SUMO drive because the emulator's speed can't change -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:gravity="end"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/demoCommuteButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minWidth="200dp"
+                android:minHeight="72dp"
+                android:text="데모: 피곤한 출근길"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/demoDriftButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:minWidth="200dp"
+                android:minHeight="72dp"
+                android:text="데모: 몇 주째 피곤함"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/demoHazardButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:minWidth="200dp"
+                android:minHeight="72dp"
+                android:text="데모: 전방 구간 경고"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+        <!-- Alert from the server: short, high-contrast, glanceable while driving -->
+        <TextView
+            android:id="@+id/alertBanner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:background="#C62828"
+            android:padding="20dp"
+            android:textColor="#FFFFFF"
+            android:textSize="34sp"
+            android:textStyle="bold"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/speedText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="-- km/h"
+                android:textSize="64sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/accelText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="-- m/s²"
+                android:textSize="64sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/signalsText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/eventText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:textSize="28sp"
+            android:textStyle="bold" />
+
+        <!-- End-of-trip comparison with the driver's own commute history -->
+        <TextView
+            android:id="@+id/tripReportText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:background="#EEF2F7"
+            android:padding="20dp"
+            android:textSize="26sp"
+            android:visibility="gone" />
+
+        <!-- Answer to a long-term change: start the check over from today -->
+        <Button
+            android:id="@+id/driftOkButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginTop="12dp"
+            android:minHeight="72dp"
+            android:text="괜찮아요 (지금부터 새 기준으로)"
+            android:textSize="20sp"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/messagesText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:alpha="0.7"
+            android:textSize="20sp" />
+    </LinearLayout>
+</ScrollView>
